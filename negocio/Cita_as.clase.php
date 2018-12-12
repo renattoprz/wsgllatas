@@ -28,6 +28,10 @@ class Cita_as extends Conexion {
     function getId_mascota() {
         return $this->id_mascota;
     }
+	
+	function getFecha() {
+        return $this->fecha_cita;
+    }
 
     
 
@@ -80,14 +84,18 @@ class Cita_as extends Conexion {
                 
                 //Preparar la sentencia
                 $sentencia = $this->dblink->prepare($sql);
+		$id=$this-> getId_cita_as();
+		$fecha=$this-> getFecha();
+		$estado=$this-> getEstado();
+		$id_mascota=$this-> getId_mascota();
                 
                 //Asignar un valor a cada parametro
-                $sentencia->bindParam(":p_id_cita", $this->_fecha());
-                $sentencia->bindParam(":p_fecha_cita", $this->getFecha_cita());
+                $sentencia->bindParam(":p_id_cita", $id);
+                $sentencia->bindParam(":p_fecha_cita", $fecha);
                 
-                $sentencia->bindParam(":p_estado", $this->getEstado());
+                $sentencia->bindParam(":p_estado", $estado);
 //                
-                $sentencia->bindParam(":p_id_mascota", $this->getId_mascota());
+                $sentencia->bindParam(":p_id_mascota",$id_mascota);
 //                
                 
                 
