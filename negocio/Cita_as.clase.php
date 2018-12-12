@@ -84,13 +84,13 @@ class Cita_as extends Conexion {
                 
                 //Preparar la sentencia
                 $sentencia = $this->dblink->prepare($sql);
-		$id=$this-> getId_cita_as();
+		//$id=$this-> getId_cita_as();
 		$fecha=$this-> getFecha();
 		$estado=$this-> getEstado();
 		$id_mascota=$this-> getId_mascota();
                 
                 //Asignar un valor a cada parametro
-                $sentencia->bindParam(":p_id_cita", $id);
+                $sentencia->bindParam(":p_id_cita", $nuevoNumeroVenta);
                 $sentencia->bindParam(":p_fecha_cita", $fecha);
                 
                 $sentencia->bindParam(":p_estado", $estado);
