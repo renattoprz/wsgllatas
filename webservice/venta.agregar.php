@@ -3,15 +3,15 @@ require_once 'token.validar.php';
 require_once '../negocio/Venta.clase.php';
 require_once '../util/funciones/Funciones.clase.php';
 
-if (! isset($_POST["token"])){
-    Funciones::imprimeJSON(500, "Debe especificar un token", "");
-    exit();
-}
+//if (! isset($_POST["token"])){
+   // Funciones::imprimeJSON(500, "Debe especificar un token", "");
+   // exit();
+//}
 
 $token = $_POST["token"];
 
 try {
-   if(validarToken($token)){ //token válido
+  // if(validarToken($token)){ //token válido
          $codigoTipoComprobante=$_POST["p_tc"];
      $numeroSerie=$_POST["p_nser"];
      $codigoCliente=$_POST["p_cli"];
@@ -34,7 +34,7 @@ try {
     
        Funciones::imprimeJSON(200, "venta_agregar_ok_ntbs", $resultado);
        
-   }
+  // }
 } catch (Exception $exc) {
     $mensajeError = $exc ->getMessage();
     $position = strpos($mensajeError, "Raise exception");
