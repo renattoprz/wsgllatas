@@ -3,10 +3,10 @@ require_once 'token.validar.php';
 require_once '../negocio/Cita_as.clase.php';
 require_once '../util/funciones/Funciones.clase.php';
 
-if (! isset($_POST["token"])){
-    Funciones::imprimeJSON(500, "Debe especificar un token", "");
-    exit();
-}
+//if (! isset($_POST["token"])){
+    //Funciones::imprimeJSON(500, "Debe especificar un token", "");
+   // exit();
+//}
 
 $token = $_POST["token"];
 
