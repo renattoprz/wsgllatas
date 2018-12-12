@@ -90,7 +90,7 @@ class Cita_as extends Conexion {
 		$id_mascota=$this-> getId_mascota();
                 
                 //Asignar un valor a cada parametro
-                $sentencia->bindParam(":p_id_cita", $nuevoNumeroVenta);
+                $sentencia->bindParam(":p_id_cita_as", $nuevoNumeroVenta);
                 $sentencia->bindParam(":p_fecha_cita", $fecha);
                 
                 $sentencia->bindParam(":p_estado", $estado);
