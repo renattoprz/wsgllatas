@@ -27,7 +27,7 @@ try {
      $obj->setId_mascota($idMascota);
      
      
-     //$resultado=$obj->agregar_as();
+     $resultado=$obj->agregar_as();
              
      
     
