@@ -11,7 +11,7 @@ require_once '../util/funciones/Funciones.clase.php';
 $token = $_POST["token"];
 
 try {
-   if(validarToken($token)){ //token válido
+  // if(validarToken($token)){ //token válido
        
          $fechaCita=$_POST["p_fecha_cita"];
          $fechaCita= date("Y-m-d");
@@ -33,7 +33,7 @@ try {
     
        Funciones::imprimeJSON(200, "venta_agregar_ok_ntbs", $resultado);
        
-   }
+  // }
 } catch (Exception $exc) {
     $mensajeError = $exc ->getMessage();
     $position = strpos($mensajeError, "Raise exception");
