@@ -10,11 +10,12 @@ if (! isset($_POST["token"])){
 }
 
 $token = $_POST["token"];
+$p_id_cliente = $_POST["p_id_cliente"];
 try {
     if(validarToken($token)){
         $obj = new Mascota();
-       // $resultado = $obj->listar_for_veterinario($_POST["p_tc"]);
-        $resultado = $obj->listar_for_veterinario();
+        $resultado = $obj->listar_for_cliente($p_id_cliente);
+        //$resultado = $obj->listar_for_veterinario();
         Funciones::imprimeJSON(200, "", $resultado);
     }
     
